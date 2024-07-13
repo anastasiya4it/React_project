@@ -4,8 +4,7 @@
 # Он не является необходимым для работы проекта и может быть безопасно игнорирован системой контроля версий.
 node_modules
 /build
-/config
-webpack.config.ts--withСonfig
+trash
 # local env files
 .env.*.local
 
