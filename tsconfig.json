@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        //Куда производится сборка, но мы собираем с помощью Вебпак, поэтому не важно
+        "outDir":"./dist/",
+        //Подсвечивает все места где  не указан тип
+        //Однако не означает, что теперь вовсе нельзя использовать ANY
+        //Просто означает, что нужно явно написать any
+
+        "noImplicitAny":true,
+        // "module": "ES6",
+        "module": "ESNext",
+        //в какую версию компилируем: для поддержки большинства браузеров
+        "target":"ES5",
+        "jsx":"react",
+        //Компилятор будет использовать не только TS файлы, но и JS файлы
+        "allowJs":true,
+        // для абсолютного импорта
+        "baseUrl": ".",
+        "moduleResolution":"node",
+//esModuleInterop позволяет работать с пакетами, которые используют common js как с обычными пакетами с помощью import (require() module.export) - это common js
+        "esModuleInterop":true,
+        //Если какая-либо библиотека не имеет default import()
+        //лоадеры вроде ts-loader или babel-loader автоматически создают их
+        //вместо такого импорта
+        //import * as React from 'react'
+        // можно писать такой
+        //import React from 'react'
+        "allowSyntheticDefaultImports": true
+
+    },
+    "ts-node":{
+        "compilerOptions":{
+            "module":"CommonJS"
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
