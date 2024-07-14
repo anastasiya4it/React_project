@@ -4,6 +4,7 @@ import { buildRules } from "./buildRules";
 import { buildResolvers } from "./buildResolvers";
 import path from "path";
 import webpack from "webpack";
+import { buildDevServer } from "./buildDevServer";
 
 export function buildWebpackConfig(
   options: BuildOptions
@@ -21,5 +22,8 @@ export function buildWebpackConfig(
       rules: buildRules(),
     },
     resolve: buildResolvers(),
+    devtool: options.mode == "development" ? "inline-source-map" : undefined,
+    devServer:
+      options.mode == "development" ? buildDevServer(options) : undefined,
   };
 }
