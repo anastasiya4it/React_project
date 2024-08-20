@@ -1,0 +1,13 @@
+.background{
+    background-color: var(--inverted-bg-color);
+}
+.navbar{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu{
+    display: flex;
+    gap: 20px;
+}

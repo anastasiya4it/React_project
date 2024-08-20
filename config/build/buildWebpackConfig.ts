@@ -9,19 +9,21 @@ import { buildDevServer } from "./buildDevServer";
 export function buildWebpackConfig(
   options: BuildOptions
 ): webpack.Configuration {
+  const isDev = Boolean(options.mode === "development");
   return {
     mode: options.mode,
     entry: options.paths.entry,
     output: {
-      filename: "[name].[contenthash].js", // Новая ерсия будет кешироватся и Вебпак будет выдавать новое уникальное название
+      filename: "[name].[contenthash:4].js", // Новая ерсия будет кешироватся и Вебпак будет выдавать новое уникальное название
       path: options.paths.build,
+      // chunkFilename: "[name].bundle.js",
       clean: true, //Удаляем все предыдущие версии файла от Вебпак
     },
-    plugins: buildPlugins(options),
+    plugins: buildPlugins(options, isDev),
     module: {
-      rules: buildRules(),
+      rules: buildRules(isDev),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     devtool: options.mode == "development" ? "inline-source-map" : undefined,
     devServer:
       options.mode == "development" ? buildDevServer(options) : undefined,

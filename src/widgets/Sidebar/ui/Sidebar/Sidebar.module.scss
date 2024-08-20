@@ -1,0 +1,29 @@
+.sidebar{
+    width: var(--sidebar-width-isopen);
+    height: calc(100vh - var(--navbar-height));
+    background-color: var(--inverted-bg-color);
+    transition: width 0.3s;
+    position: relative;
+}
+.isOpen{
+    width: var(--sidebar-width);
+   transition: width 0.3s;
+}
+.btn{
+    background-color: transparent;
+    color: var(--bg-color);
+}
+.toggle{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;   
+}
+.toggleNoOpen{
+    // display: block; 
+    flex-direction: column;
+    margin: 0 auto; 
+    text-align: center;
+    gap: 20px;
+}
