@@ -14,6 +14,9 @@
       "style": {
         "noShoutyConstants": "warn",
         "useNamingConvention": "error"
+      },
+      "correctness": {
+        "noNodejsModules": "off"
       }
     }
   },

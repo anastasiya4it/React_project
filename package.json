@@ -8,7 +8,10 @@
     "start": "webpack serve --env port=4000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "test:jest": "jest"
+    "test:jest": "jest",
+    "i18n-extract": "set NODE_ENV=development babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'",
+    "biome:start": "biome lint --error-on-warnings ./src",
+    "biome:safeFixes": "biomejs/biome lint --write ./src"
   },
   "keywords": [],
   "author": "{\"name\":\"Bo136\", \"url\":\"https://github.com/anastasiya4it\"",
@@ -30,6 +33,7 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.24.8",
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-typescript": "^7.24.7",

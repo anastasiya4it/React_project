@@ -1,17 +1,8 @@
-import { BuildOptions } from "./types/config";
-import { buildPlugins } from "./buidlPlugins";
-import { buildRules } from "./buildRules";
-import { buildResolvers } from "./buildResolvers";
-import path from "path";
-import webpack from "webpack";
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import type { BuildOptions } from "./types/config";
+import type { Configuration } from "webpack-dev-server";
 
-export function buildDevServer(options: BuildOptions): DevServerConfiguration {
+export function buildDevServer(options: BuildOptions): Configuration {
   return {
-    static: {
-      directory: options.paths.build,
-      // path.resolve(__dirname, "build"),
-    },
     port: options.port,
     open: true,
     hot: true,

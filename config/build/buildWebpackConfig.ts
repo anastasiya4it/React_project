@@ -1,9 +1,9 @@
-import { BuildOptions } from "./types/config";
+import type { BuildOptions } from "./types/config";
 import { buildPlugins } from "./buidlPlugins";
 import { buildRules } from "./buildRules";
 import { buildResolvers } from "./buildResolvers";
-import path from "path";
-import webpack from "webpack";
+import path from "node:path";
+import type webpack from "webpack";
 import { buildDevServer } from "./buildDevServer";
 
 export function buildWebpackConfig(
@@ -24,8 +24,8 @@ export function buildWebpackConfig(
       rules: buildRules(isDev),
     },
     resolve: buildResolvers(options),
-    devtool: options.mode == "development" ? "inline-source-map" : undefined,
+    devtool: options.mode === "development" ? "inline-source-map" : undefined,
     devServer:
-      options.mode == "development" ? buildDevServer(options) : undefined,
+      options.mode === "development" ? buildDevServer(options) : undefined,
   };
 }

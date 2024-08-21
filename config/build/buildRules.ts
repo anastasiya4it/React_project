@@ -1,11 +1,11 @@
-import webpack from "webpack";
-import path from "path";
+import type webpack from "webpack";
+import path from "node:path";
 // import tailwindcss from "tailwindcss";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 // Если не используем тайпскрипт - нужен babel-loader
-export function buildRules(isDev: Boolean): webpack.RuleSetRule[] {
+export function buildRules(isDev: boolean): webpack.RuleSetRule[] {
   // const isDev = mode === "development";
   const babelLoader = {
     test: /\.m?js$/,

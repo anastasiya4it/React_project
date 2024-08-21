@@ -24,31 +24,19 @@ i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
-  .use(ChainedBackend)
+  // .use(ChainedBackend)
   .init({
-    resources,
+    // resources,
+    backend: {
+      loadPath: "./locales/{{lng}}/{{ns}}.json",
+    },
     fallbackLng: "en",
     supportedLngs: ["en", "ru", "ua"],
     debug: __IS_DEV__,
-
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
-
-    backend: {
-      // backends: [
-      //   HttpBackend,
-      //   resourcesToBackend(
-      //     // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-      //     (lng: any, ns: any) => import(`./locales/${lng}/${ns}.json`)
-      //   ),
-      // ],
-      // backendOptions: [
-      //   {
-      loadPath: "./locales/{{lng}}/{{ns}}.json",
-      //   },
-      // ],
-    },
+    saveMissing: true,
   });
 
 export default i18n;
