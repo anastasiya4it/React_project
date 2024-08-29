@@ -1,0 +1,56 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+.text{
+    text-align: center;
+    z-index: 5;
+}
+.img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.1;
+    height: 100%;
+    width: 100%;
+    object-fit: fill; 
+}
+.overlay {
+    pointer-events: none;
+    display: grid;
+    width:100%;
+    height: 100vh;
+    z-index: 1;
+  }
+  
+  .overlay::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: linear-gradient(
+        0deg,
+        transparent 0%,
+        var(--inverted-opasity-secondary-color) 2%,
+        var(--inverted-opasity-primary-color) 3%,
+        var(--inverted-opasity-secondary-color) 3%,
+        transparent 100%);
+    background-repeat: no-repeat;
+    animation: scan 7.5s linear 0s infinite;
+  }
+  
+  @keyframes scan {
+    0%        { background-position: 0 -100vh; }
+     100% { background-position: 0 100vh; }
+  }
+  
