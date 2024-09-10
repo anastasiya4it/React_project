@@ -1,4 +1,4 @@
-import { classNames } from "./className";
+import { classNames } from "shared/lib/className/className";
 
 describe("sum module", () => {
   test("Функция classNames со всеми заполненными полями", () => {

@@ -19,7 +19,7 @@ const config: Config = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
+  // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
@@ -71,7 +71,7 @@ const config: Config = {
   // maxWorkers: "50%",
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: ["node_modules"],
+  moduleDirectories: ["node_modules", "src"],
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
