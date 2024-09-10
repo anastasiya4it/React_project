@@ -25,10 +25,10 @@ const config: Config = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  // coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+  // coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
 
   // Indicates which provider should be used to instrument code for coverage
   // coverageProvider: "babel",
@@ -62,7 +62,7 @@ const config: Config = {
   // globalSetup: undefined,
 
   // A path to a module which exports an async function that is triggered once after all test suites
-  // globalTeardown: undefined,
+  // globalTeardown: "<rootDir>/*",
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
@@ -149,12 +149,14 @@ const config: Config = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
+  testMatch: [
+    // "**/__tests__/**/*.[jt]s?(x)",
+    // "**/?(*.)+(spec|test).[tj]s?(x)",
+    "<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)",
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  testPathIgnorePatterns: ["\\\\node_modules\\\\"],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
