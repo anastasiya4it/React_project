@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./ErrorPage.module.scss";
+import cls from "./ErrorPage.module.scss";
 import errorImage from "shared/assets/images/404.png";
 
 const ErrorPage = () => {

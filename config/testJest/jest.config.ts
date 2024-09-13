@@ -6,6 +6,8 @@
 import type { Config } from "jest";
 
 const config: Config = {
+  // In jest.config.js add (if you haven't already)
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -72,7 +74,7 @@ const config: Config = {
 
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ["node_modules", "src"],
-
+  modulePaths: ["<rootDir>src", "<rootDir>/node_modules"],
   // An array of file extensions your modules use
   moduleFileExtensions: [
     "js",
@@ -86,7 +88,15 @@ const config: Config = {
   ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: {
+    // "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+    // "<rootDir>/__mocks__/fileMock.tsx",
+    // "\\.(png|svg)$": path.resolve(__dirname, "fileMock.tsx"),
+    "\\.(svg)$": "<rootDir>/config/testJest/mocks/svgMock.ts",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/config/testJest/mocks/fileMock.ts",
+    "\\.s?(css|ass)$": "identity-obj-proxy",
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -131,7 +141,7 @@ const config: Config = {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ["./config/testJest/jest-setup.ts"],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
@@ -168,7 +178,9 @@ const config: Config = {
   // testRunner: "jest-circus/runner",
 
   // A map from regular expressions to paths to transformers
-  // transform: undefined,
+  // transform: {
+  //   ".+\\.(css|scss|png|jpg|svg)$": "jest-transform-stub",
+  // },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

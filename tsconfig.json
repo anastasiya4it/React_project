@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -26,6 +27,10 @@
       "module": "CommonJS"
     }
   },
-  "include": ["src", "src/shared/config/i18n/i18n.ts"],
+  "include": [
+    "src",
+    "src/shared/config/i18n/i18n.ts",
+    "./config/testJest/jest-setup.ts"
+  ],
   "exclude": ["node_modules"]
 }

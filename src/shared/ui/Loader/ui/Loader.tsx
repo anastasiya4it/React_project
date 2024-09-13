@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./Loader.module.scss";
+import cls from "./Loader.module.scss";
 import { useState, useRef, useEffect } from "react";
 import { useTheme } from "app/provider/ThemeProvider/lib/useTheme";
 interface LoaderProps {

@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./LanguageSelection.module.scss";
+import cls from "./LanguageSelection.module.scss";
 import Language from "shared/assets/icons/language.svg";
 import { Button } from "shared/ui/Button";
 import { useTranslation } from "react-i18next";

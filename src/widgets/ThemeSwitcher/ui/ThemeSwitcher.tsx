@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./ThemeSwitcher.module.scss";
+import cls from "./ThemeSwitcher.module.scss";
 import { useTheme } from "app/provider/ThemeProvider/lib/useTheme";
 import { Button } from "shared/ui/Button";
 import Darc from "shared/assets/icons/dark.png";

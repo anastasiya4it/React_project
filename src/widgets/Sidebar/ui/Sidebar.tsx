@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./Sidebar.module.scss";
+import cls from "./Sidebar.module.scss";
 import { useState } from "react";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LanguageSelection } from "widgets/LanguageSelection";
@@ -14,11 +14,15 @@ const Sidebar = ({ className }: SidebarProps) => {
     setIsOpen((prev) => !prev);
   };
   return (
-    <div className={classNames(cls.sidebar, { [cls.isOpen]: isOpen }, [])}>
+    <div
+      data-testid="sidebar"
+      className={classNames(cls.sidebar, { [cls.isOpen]: isOpen }, [])}
+    >
       <div className={classNames(cls.btn, {}, [])}>
-        <TogglSidebar isOpen={isOpen} onClick={onToggle} />
+        <TogglSidebar data-testid="toggle" isOpen={isOpen} onClick={onToggle} />
       </div>
       <div
+        data-testid="menu-footer"
         className={classNames(cls.toggle, { [cls.toggleNoOpen]: isOpen }, [])}
       >
         <ThemeSwitcher />

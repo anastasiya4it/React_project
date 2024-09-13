@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./ErrorBoundarySecondaryScreen.module.scss";
+import cls from "./ErrorBoundarySecondaryScreen.module.scss";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/ui/Button";
 import { useState } from "react";

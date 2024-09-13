@@ -1,5 +1,5 @@
 import { classNames } from "shared/lib/className/className";
-import * as cls from "./TogglSidebar.module.scss";
+import cls from "./TogglSidebar.module.scss";
 import { Button } from "shared/ui/Button";
 import Arrow from "shared/assets/icons/arrow.png";
 import type { ButtonHTMLAttributes } from "react";
