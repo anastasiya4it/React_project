@@ -9,8 +9,8 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "i18n-extract": "set NODE_ENV=development babel -f .babelrc 'src/**/*.{js,jsx,ts,tsx}'",
-    "biome:start": "biome lint --error-on-warnings ./src",
-    "biome:safeFixes": "biomejs/biome lint --write ./src",
+    "biome:start": "npx biome lint --error-on-warnings ./src",
+    "biome:safeFixes": "npx biomejs/biome lint --write ./src",
     "storybook": "storybook dev -p 6008 -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook"
   },
@@ -36,6 +36,7 @@
   "devDependencies": {
     "@babel/cli": "^7.24.8",
     "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.25.3",
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",

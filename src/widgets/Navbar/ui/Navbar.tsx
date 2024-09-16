@@ -15,10 +15,10 @@ const Navbar = ({ className }: NavbarProps) => {
         {/* //container */}
 
         <div className={classNames(cls.menu, {}, [])}>
-          <AppLink them={AppLinkTheme.Secondary} className="" to="/">
+          <AppLink theme={AppLinkTheme.Secondary} className="" to="/">
             Home
           </AppLink>
-          <AppLink them={AppLinkTheme.Secondary} className="" to="/about">
+          <AppLink theme={AppLinkTheme.Secondary} className="" to="/about">
             About
           </AppLink>
         </div>
