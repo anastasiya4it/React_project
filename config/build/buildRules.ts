@@ -3,6 +3,7 @@ import path from "node:path";
 // import tailwindcss from "tailwindcss";
 import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import buildCssLoader from "./loaders/buildCssLoader";
 
 // Если не используем тайпскрипт - нужен babel-loader
 export function buildRules(isDev: boolean): webpack.RuleSetRule[] {
@@ -42,25 +43,7 @@ export function buildRules(isDev: boolean): webpack.RuleSetRule[] {
     exclude: /node-modules/,
     //Исключаемые файлы
   };
-  const cssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-      {
-        loader: "css-loader",
-        options: {
-          modules: {
-            auto: /\.module\.\w+$/,
-            localIdentName: isDev
-              ? "[path][name]__[local]--[hash:base64:5]"
-              : "[hash:base64:8]",
-            namedExport: false,
-          },
-        },
-      },
-      "sass-loader",
-    ],
-  };
+  const cssLoader = buildCssLoader(isDev);
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     loader: "file-loader",

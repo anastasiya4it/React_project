@@ -1,7 +1,7 @@
 import { classNames } from "shared/lib/className/className";
 import cls from "./TogglSidebar.module.scss";
 import { Button } from "shared/ui/Button";
-import Arrow from "shared/assets/icons/arrow.png";
+import Arrow from "shared/assets/icons/arrow.svg";
 import type { ButtonHTMLAttributes } from "react";
 interface TogglSidebarProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -14,9 +14,7 @@ const TogglSidebar = (props: TogglSidebarProps) => {
   return (
     <div className={cls.main}>
       <Button className={cls.btn} {...otherprops}>
-        <img
-          src={Arrow}
-          alt="NO"
+        <Arrow
           className={classNames(cls.icon, { [cls.iconRotate]: isOpen }, [
             className ?? "",
           ])}

@@ -4,6 +4,7 @@ import type { ButtonHTMLAttributes } from "react";
 
 export enum ButtonTheme {
   Primary = "primary",
+  Clear = "clear",
 }
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -20,7 +21,9 @@ const Button = (props: ButtonProps) => {
   return (
     <button
       role="button"
-      className={classNames(cls.button, {}, [className ?? "", cls[theme]])}
+      className={classNames(cls.button, { [cls[theme]]: true }, [
+        className ?? "",
+      ])}
       {...otherprops}
     >
       <div className={classNames(cls.inner)}>{children}</div>

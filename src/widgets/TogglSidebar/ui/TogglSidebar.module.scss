@@ -10,6 +10,8 @@ display: block;
     width: 30px;
     height: 30px;
     transition: transform .5s;
+    fill: var(--inverted-bg-color);
+    stroke:var(--inverted-bg-color);
 }
 .iconRotate{
     transform: rotate(-180deg);

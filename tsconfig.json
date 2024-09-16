@@ -29,6 +29,8 @@
   },
   "include": [
     "src",
+    "/src/**/*.ts",
+    "/src/**/*.tsx",
     "src/shared/config/i18n/i18n.ts",
     "./config/testJest/jest-setup.ts"
   ],
