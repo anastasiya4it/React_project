@@ -29,13 +29,13 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const SidebarLight: Story = {
   globals: {
-    theme: Theme.light,
+    theme: Theme.Light,
   },
   args: {},
 };
 export const SidebarDark: Story = {
   globals: {
-    theme: Theme.dark,
+    theme: Theme.Dark,
   },
   args: {},
 };

@@ -9,7 +9,7 @@ import { classNames } from "shared/lib/className/className";
 import "../../../styles/index.scss";
 
 const localStorTheme =
-  (localStorage.getItem("LOCAL_STORAGE_THEME") as Theme) || Theme.light;
+  (localStorage.getItem("LOCAL_STORAGE_THEME") as Theme) || Theme.Light;
 
 const ThemeProvider: FunctionComponent<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(localStorTheme);

@@ -4,15 +4,15 @@ import { MainPage } from "pages/MainPage";
 import { PathRouteProps, type RouteProps } from "react-router-dom";
 
 export enum Routes {
-  main = "main",
-  about = "about",
-  error = "error",
+  Main = "main",
+  About = "about",
+  Error = "error",
 }
 
 export const RouterPath: Record<Routes, string> = {
-  [Routes.main]: "/",
-  [Routes.about]: "/about",
-  [Routes.error]: "/*",
+  [Routes.Main]: "/",
+  [Routes.About]: "/about",
+  [Routes.Error]: "/*",
 };
 export const RouterConfig: ReadonlyArray<RouteProps> = [
   {

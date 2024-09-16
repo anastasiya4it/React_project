@@ -6,8 +6,8 @@ import { withReactContext } from "storybook-react-context";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator";
 import React from "react";
 
-// const FirstContext = React.createContext([{ theme: Theme.light }, () => {}]);
-// const SecondContext = React.createContext([{ theme: Theme.dark }]);
+// const FirstContext = React.createContext([{ theme: Theme.Light }, () => {}]);
+// const SecondContext = React.createContext([{ theme: Theme.Dark }]);
 
 // Define the reducer function
 // const reducer = (state: { theme: Theme }, action: { type: string }) => {
@@ -15,7 +15,7 @@ import React from "react";
 //     case "toggleTheme":
 //       return {
 //         ...state,
-//         theme: state.theme === Theme.light ? Theme.dark : Theme.light,
+//         theme: state.theme === Theme.Light ? Theme.Dark : Theme.Light,
 //       };
 //     default:
 //       return state;
@@ -36,17 +36,17 @@ const meta: Meta<typeof ThemeSwitcher> = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-// const DarkContext = React.createContext({ theme: Theme.dark });
+// const DarkContext = React.createContext({ theme: Theme.Dark });
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const ButtonDark: Story = {
   args: {},
   globals: {
-    theme: Theme.dark,
+    theme: Theme.Dark,
   },
 };
 export const ButtonLight: Story = {
   args: {},
   globals: {
-    theme: Theme.light,
+    theme: Theme.Light,
   },
 };

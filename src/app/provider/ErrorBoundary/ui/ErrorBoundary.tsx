@@ -24,6 +24,7 @@ class ErrorBoundary extends React.Component<
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
+    // biome-ignore lint/suspicious/noConsoleLog: <explanation>
     console.log(error, errorInfo);
   }
 

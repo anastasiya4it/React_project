@@ -17,7 +17,7 @@ const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
   return (
     <div className={cls.main}>
       <Button onClick={toggeleTheme} className={cls.btn}>
-        {theme === Theme.dark ? (
+        {theme === Theme.Dark ? (
           <Dark className={classNames(cls.icon, {}, [className ?? ""])} />
         ) : (
           <Light className={classNames(cls.icon, {}, [className ?? ""])} />

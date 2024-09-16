@@ -6,14 +6,14 @@ interface UseThemeResult {
   theme: Theme;
 }
 const localStorTheme =
-  (localStorage.getItem("LOCAL_STORAGE_THEME") as Theme) || Theme.light;
+  (localStorage.getItem("LOCAL_STORAGE_THEME") as Theme) || Theme.Light;
 
 export function useTheme(): UseThemeResult {
-  const { theme = Theme.light, setTheme } = useContext(ThemeContext);
+  const { theme = Theme.Light, setTheme } = useContext(ThemeContext);
 
   const toggeleTheme = () => {
     if (setTheme) {
-      setTheme(theme === Theme.light ? Theme.dark : Theme.light);
+      setTheme(theme === Theme.Light ? Theme.Dark : Theme.Light);
       localStorage.setItem("LOCAL_STORAGE_THEME", theme);
     }
   };
