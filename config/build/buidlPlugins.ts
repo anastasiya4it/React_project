@@ -16,8 +16,8 @@ export function buildPlugins(
       // path.resolve(__dirname, "public", "index.html"),
     }),
     new MiniCssExtractPlugin({
-      filename: ".css/[name].[contenthash:4].css",
-      chunkFilename: ".css/[id].[contenthash:4].css",
+      filename: "css/[name].[contenthash:4].css",
+      chunkFilename: "css/[id].[contenthash:4].css",
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),

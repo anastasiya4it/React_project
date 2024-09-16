@@ -16,7 +16,7 @@ export function buildWebpackConfig(
     output: {
       filename: "[name].[contenthash:4].js", // Новая ерсия будет кешироватся и Вебпак будет выдавать новое уникальное название
       path: options.paths.build,
-      // chunkFilename: "[name].bundle.js",
+      chunkFilename: "[name].bundle.js",
       clean: true, //Удаляем все предыдущие версии файла от Вебпак
     },
     plugins: buildPlugins(options, isDev),
@@ -27,5 +27,10 @@ export function buildWebpackConfig(
     devtool: options.mode === "development" ? "inline-source-map" : undefined,
     devServer:
       options.mode === "development" ? buildDevServer(options) : undefined,
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
+    },
   };
 }
